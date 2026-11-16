@@ -1,0 +1,7 @@
+{
+  "name": "IELTS Vocab Master - Environment & Education",
+  "description": "Chuyên trang học từ vựng IELTS chuyên sâu theo 2 chủ đề Môi Trường & Giáo Dục: Bảng gốc PDF, Flashcard, Trắc nghiệm bộ lọc, Phát âm toàn diện và Sổ tay highlight ghi chú tương tác.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

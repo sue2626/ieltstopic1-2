@@ -1,0 +1,381 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Base Theme Variables Default (Dusk Lavender / Pastel Tối) */
+:root {
+  --theme-primary: #8b74e8;
+  --theme-primary-hover: #775fd9;
+  --theme-primary-soft: #f4effa;
+  --theme-primary-border: #ddd6fe;
+  --theme-primary-text: #5b45b8;
+  --theme-page-bg: #f4effa;
+  --theme-card-bg: #ffffff;
+  --theme-badge-bg: #ede9fe;
+  --theme-badge-text: #5b21b6;
+  --pastel-surface-bg: #ffffff;
+  --pastel-surface-soft: #f8fafc;
+  --pastel-surface-hover: #f1f5f9;
+  --pastel-border: #e2e8f0;
+  --pastel-flashcard-back: #262138;
+}
+
+:root.dark,
+html.dark {
+  --theme-primary: #9b87f5;
+  --theme-primary-hover: #8872ea;
+  --theme-primary-soft: rgba(155, 135, 245, 0.16);
+  --theme-primary-border: #4a4368;
+  --theme-primary-text: #d6ccff;
+  --theme-page-bg: #231f33;
+  --theme-card-bg: #2d2841;
+  --theme-badge-bg: rgba(155, 135, 245, 0.22);
+  --theme-badge-text: #e0d9ff;
+  --pastel-surface-bg: #2d2841;
+  --pastel-surface-soft: #37314f;
+  --pastel-surface-hover: #413a5e;
+  --pastel-border: #4a4368;
+  --pastel-flashcard-back: #262138;
+}
+
+/* 💜 Dusk Lavender (Tím Khói Pastel) */
+[data-theme="lavender"] {
+  --theme-primary: #8b74e8;
+  --theme-primary-hover: #775fd9;
+  --theme-primary-soft: #f4effa;
+  --theme-primary-border: #ddd6fe;
+  --theme-primary-text: #5b45b8;
+  --theme-page-bg: #f4effa;
+  --theme-card-bg: #ffffff;
+  --theme-badge-bg: #ede9fe;
+  --theme-badge-text: #5b21b6;
+}
+[data-theme="lavender"].dark,
+html.dark[data-theme="lavender"],
+.dark [data-theme="lavender"] {
+  --theme-primary: #9b87f5;
+  --theme-primary-hover: #8872ea;
+  --theme-primary-soft: rgba(155, 135, 245, 0.16);
+  --theme-primary-border: #4a4368;
+  --theme-primary-text: #ddd6fe;
+  --theme-page-bg: #231f33;
+  --theme-card-bg: #2d2841;
+  --theme-badge-bg: rgba(155, 135, 245, 0.22);
+  --theme-badge-text: #e0d9ff;
+  --pastel-surface-bg: #2d2841;
+  --pastel-surface-soft: #37314f;
+  --pastel-surface-hover: #413a5e;
+  --pastel-border: #4a4368;
+  --pastel-flashcard-back: #262138;
+}
+
+/* 🌸 Dusty Sakura (Hồng Khói Pastel) */
+[data-theme="sakura"] {
+  --theme-primary: #df6b88;
+  --theme-primary-hover: #cc5674;
+  --theme-primary-soft: #faeff3;
+  --theme-primary-border: #fecdd3;
+  --theme-primary-text: #9f3654;
+  --theme-page-bg: #faeff3;
+  --theme-card-bg: #ffffff;
+  --theme-badge-bg: #ffe4e6;
+  --theme-badge-text: #9f1239;
+}
+[data-theme="sakura"].dark,
+html.dark[data-theme="sakura"],
+.dark [data-theme="sakura"] {
+  --theme-primary: #e8829a;
+  --theme-primary-hover: #dc6f88;
+  --theme-primary-soft: rgba(232, 130, 154, 0.16);
+  --theme-primary-border: #584456;
+  --theme-primary-text: #ffd4df;
+  --theme-page-bg: #2b212a;
+  --theme-card-bg: #362a35;
+  --theme-badge-bg: rgba(232, 130, 154, 0.22);
+  --theme-badge-text: #ffd9e2;
+  --pastel-surface-bg: #362a35;
+  --pastel-surface-soft: #423441;
+  --pastel-surface-hover: #4e3e4d;
+  --pastel-border: #584456;
+  --pastel-flashcard-back: #2d222c;
+}
+
+/* 🍵 Dusty Matcha (Bạc Hà Khói Pastel) */
+[data-theme="matcha"] {
+  --theme-primary: #4ca87a;
+  --theme-primary-hover: #3d9167;
+  --theme-primary-soft: #eef6f1;
+  --theme-primary-border: #bbf7d0;
+  --theme-primary-text: #27694a;
+  --theme-page-bg: #eef6f1;
+  --theme-card-bg: #ffffff;
+  --theme-badge-bg: #dcfce7;
+  --theme-badge-text: #166534;
+}
+[data-theme="matcha"].dark,
+html.dark[data-theme="matcha"],
+.dark [data-theme="matcha"] {
+  --theme-primary: #6bc497;
+  --theme-primary-hover: #58b385;
+  --theme-primary-soft: rgba(107, 196, 151, 0.16);
+  --theme-primary-border: #435952;
+  --theme-primary-text: #c7f2db;
+  --theme-page-bg: #1e2926;
+  --theme-card-bg: #273531;
+  --theme-badge-bg: rgba(107, 196, 151, 0.22);
+  --theme-badge-text: #cef5e0;
+  --pastel-surface-bg: #273531;
+  --pastel-surface-soft: #31423d;
+  --pastel-surface-hover: #3b4f4a;
+  --pastel-border: #435952;
+  --pastel-flashcard-back: #212d2a;
+}
+
+/* 🌊 Twilight Periwinkle (Xanh Đêm Pastel) */
+[data-theme="ocean"] {
+  --theme-primary: #5794d4;
+  --theme-primary-hover: #437fc0;
+  --theme-primary-soft: #edf4fc;
+  --theme-primary-border: #bae6fd;
+  --theme-primary-text: #2c5b91;
+  --theme-page-bg: #edf4fc;
+  --theme-card-bg: #ffffff;
+  --theme-badge-bg: #e0f2fe;
+  --theme-badge-text: #075985;
+}
+[data-theme="ocean"].dark,
+html.dark[data-theme="ocean"],
+.dark [data-theme="ocean"] {
+  --theme-primary: #78b0ec;
+  --theme-primary-hover: #629de0;
+  --theme-primary-soft: rgba(120, 176, 236, 0.16);
+  --theme-primary-border: #445273;
+  --theme-primary-text: #cce4ff;
+  --theme-page-bg: #1e2536;
+  --theme-card-bg: #273046;
+  --theme-badge-bg: rgba(120, 176, 236, 0.22);
+  --theme-badge-text: #d4e8ff;
+  --pastel-surface-bg: #273046;
+  --pastel-surface-soft: #313c57;
+  --pastel-surface-hover: #3b4868;
+  --pastel-border: #445273;
+  --pastel-flashcard-back: #21293d;
+}
+
+/* 🍯 Muted Peach Cocoa (Đào Cacao Pastel) */
+[data-theme="honey"] {
+  --theme-primary: #d1944e;
+  --theme-primary-hover: #bc803c;
+  --theme-primary-soft: #faf4eb;
+  --theme-primary-border: #fde68a;
+  --theme-primary-text: #8c5920;
+  --theme-page-bg: #faf4eb;
+  --theme-card-bg: #ffffff;
+  --theme-badge-bg: #fef3c7;
+  --theme-badge-text: #92400e;
+}
+[data-theme="honey"].dark,
+html.dark[data-theme="honey"],
+.dark [data-theme="honey"] {
+  --theme-primary: #e3ac68;
+  --theme-primary-hover: #d49c56;
+  --theme-primary-soft: rgba(227, 172, 104, 0.16);
+  --theme-primary-border: #56463e;
+  --theme-primary-text: #fce1bd;
+  --theme-page-bg: #2a221e;
+  --theme-card-bg: #352b26;
+  --theme-badge-bg: rgba(227, 172, 104, 0.22);
+  --theme-badge-text: #ffe5c4;
+  --pastel-surface-bg: #352b26;
+  --pastel-surface-soft: #41352f;
+  --pastel-surface-hover: #4d3f38;
+  --pastel-border: #56463e;
+  --pastel-flashcard-back: #2d241f;
+}
+
+/* 🌿 Dusty Teal (Xanh Ngọc Trầm) */
+[data-theme="emerald"] {
+  --theme-primary: #48a28b;
+  --theme-primary-hover: #388d77;
+  --theme-primary-soft: #eef5f6;
+  --theme-primary-border: #a7f3d0;
+  --theme-primary-text: #226655;
+  --theme-page-bg: #eef5f6;
+  --theme-card-bg: #ffffff;
+  --theme-badge-bg: #d1fae5;
+  --theme-badge-text: #065f46;
+}
+[data-theme="emerald"].dark,
+html.dark[data-theme="emerald"],
+.dark [data-theme="emerald"] {
+  --theme-primary: #63bfa5;
+  --theme-primary-hover: #52ad93;
+  --theme-primary-soft: rgba(99, 191, 165, 0.16);
+  --theme-primary-border: #42575d;
+  --theme-primary-text: #c2f2e4;
+  --theme-page-bg: #1d282b;
+  --theme-card-bg: #263438;
+  --theme-badge-bg: rgba(99, 191, 165, 0.22);
+  --theme-badge-text: #cbf5e9;
+  --pastel-surface-bg: #263438;
+  --pastel-surface-soft: #304146;
+  --pastel-surface-hover: #394e54;
+  --pastel-border: #42575d;
+  --pastel-flashcard-back: #202c30;
+}
+
+/* ========================================================
+   Dark Pastel Surface Unification ("Pastel Tối Tối")
+   Harmonizes all cards, modals, headers, tables & inputs
+   with the active dark-pastel palette instead of harsh slate.
+   ======================================================== */
+html.dark body {
+  background-color: var(--theme-page-bg);
+  color: #edeaf6;
+}
+
+html.dark .app-container {
+  background-color: var(--theme-page-bg);
+  background-image:
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--theme-primary) 12%, transparent) 0%, transparent 42%),
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--theme-primary) 9%, transparent) 0%, transparent 38%);
+}
+
+html.dark .dark\:bg-slate-900 {
+  background-color: var(--pastel-surface-bg) !important;
+}
+
+html.dark .dark\:bg-slate-900\/95 {
+  background-color: color-mix(in srgb, var(--pastel-surface-bg) 94%, transparent) !important;
+}
+
+html.dark .dark\:bg-slate-900\/90 {
+  background-color: color-mix(in srgb, var(--pastel-surface-bg) 90%, transparent) !important;
+}
+
+html.dark .dark\:bg-slate-800,
+html.dark .dark\:bg-slate-800\/80,
+html.dark .dark\:bg-slate-800\/60,
+html.dark .dark\:bg-slate-800\/50 {
+  background-color: var(--pastel-surface-soft) !important;
+}
+
+html.dark .dark\:hover\:bg-slate-800:hover,
+html.dark .dark\:hover\:bg-slate-800\/50:hover,
+html.dark .dark\:hover\:bg-slate-700:hover {
+  background-color: var(--pastel-surface-hover) !important;
+}
+
+html.dark .dark\:bg-slate-950 {
+  background-color: var(--theme-page-bg) !important;
+}
+
+html.dark .dark\:border-slate-800,
+html.dark .dark\:border-slate-800\/80,
+html.dark .dark\:border-slate-700 {
+  border-color: var(--pastel-border) !important;
+}
+
+html.dark .dark\:divide-slate-800 > :not(:last-child) {
+  border-color: color-mix(in srgb, var(--pastel-border) 65%, transparent) !important;
+}
+
+html.dark .dark\:text-slate-500 {
+  color: #a6a2be !important;
+}
+
+html.dark .dark\:text-slate-400 {
+  color: #bab6d1 !important;
+}
+
+html.dark .flashcard-back-pastel {
+  background-color: var(--pastel-flashcard-back) !important;
+  border-color: var(--pastel-border) !important;
+}
+
+html.dark .study-mask-bar {
+  background-image: none !important;
+  background-color: var(--pastel-surface-bg) !important;
+  border-color: var(--pastel-border) !important;
+}
+
+/* ========================================================
+   Dynamic Theme Utility Classes
+   ======================================================== */
+.app-container {
+  background-color: var(--theme-page-bg);
+  min-height: 100vh;
+  transition: background-color 0.25s ease;
+}
+
+.theme-tab-active {
+  color: var(--theme-primary) !important;
+  border-bottom-color: var(--theme-primary) !important;
+  font-weight: 700 !important;
+}
+
+.theme-pill-active {
+  background-color: var(--theme-primary) !important;
+  border-color: var(--theme-primary) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.15);
+}
+
+.theme-action-btn {
+  background-color: var(--theme-primary) !important;
+  color: #ffffff !important;
+}
+.theme-action-btn:hover {
+  background-color: var(--theme-primary-hover) !important;
+}
+
+.theme-badge {
+  background-color: var(--theme-badge-bg) !important;
+  color: var(--theme-badge-text) !important;
+  border-color: var(--theme-primary-border) !important;
+}
+
+.theme-accent-text {
+  color: var(--theme-primary) !important;
+}
+
+.theme-accent-border {
+  border-color: var(--theme-primary) !important;
+}
+
+.theme-accent-soft-bg {
+  background-color: var(--theme-primary-soft) !important;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Print styling for clean study sheet printing */
+@media print {
+  header, nav, button, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .print-page {
+    page-break-after: always;
+  }
+}
